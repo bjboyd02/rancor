@@ -11,6 +11,7 @@ package Fourteeners;
  */
 public class Mountain {
 
+    private String name;
     private int elevation;
     private int elevationFactor;
     private int exposure;
@@ -23,7 +24,8 @@ public class Mountain {
     private int technicalRatingFactor;
     private int totalDifficulty;
 
-    Mountain() {
+    public Mountain() {
+        name = "NoNameGiven";
         elevation = 1;
         elevationFactor = 1;
         exposure = 1;
@@ -37,21 +39,23 @@ public class Mountain {
         totalDifficulty = 1;
     }
 
-    Mountain(int el, int e, int eG, int rTD, int tR) {
+    public Mountain(String nm, int el, int e, int eG, int rTD, int tR) {
+        name = nm;
         elevation = el;
         elevationFactor = 1;
         exposure = e;
-        exposureFactor = 1;
+        exposureFactor = 400;
         elevationGain = eG;
         elevationGainFactor = 1;
         roundTripDistance = rTD;
-        roundTripDistanceFactor = 1;
+        roundTripDistanceFactor = 10;
         technicalRating = tR;
-        technicalRatingFactor = 1;
+        technicalRatingFactor = 400;
         setTotalDifficulty();
     }
 
-    Mountain(int el, int elF, int e, int eF, int eG, int eGF, int rTD, int rTDF, int tR, int tRF) {
+    public Mountain(String nm, int el, int elF, int e, int eF, int eG, int eGF, int rTD, int rTDF, int tR, int tRF) {
+        name = nm;
         elevation = el;
         elevationFactor = elF;
         exposure = e;
@@ -217,6 +221,20 @@ public class Mountain {
      */
     public void setElevationGainFactor(int elevationGainFactor) {
         this.elevationGainFactor = elevationGainFactor;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
     }
 
 }
